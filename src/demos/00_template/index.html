@@ -9,15 +9,40 @@
     <script src="../../js/browser.min.js"></script>
 </head>
 <body>
-
-    <div id="container"></div>
-
+    <div id="example"></div>
     <script type="text/babel">
-        ReactDOM.render(
-            <h2>Welcome to React!</h2>,
-            document.getElementById('container')
-        );
-    </script>
+        //component is part of website
+        // var Bacon = React.createClass({
+        //     render: function(){
+        //         return (
+        //             <div>
+        //                 <h1>this is simple component</h1>
+        //                 <h2>this is simple component</h2>
+        //                 <h2>this is simple component</h2>
+        //                 <h2>this is simple component</h2>
+        //                 <h2>this is simple component</h2>
+        //             </div>
+        //         );
+        //     }
+        // });
 
+        var Movie = React.createClass({
+            render: function(){
+                    return(
+                            <div>
+                                <h1>{this.props.title}</h1>
+                                <h2>{this.props.genre}</h2>
+                            </div>
+                    );
+            }
+        });
+
+        ReactDOM.render(<div>
+            <Movie title="Dunkrick" genre="mov"/>
+            <Movie title="samp" genre="mov"/>
+            <Movie title="rp" genre="mov"/>
+        </div>
+        , document.getElementById('example'));
+    </script>
 </body>
 </html>
